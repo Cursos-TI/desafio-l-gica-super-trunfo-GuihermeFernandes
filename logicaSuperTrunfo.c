@@ -1,43 +1,120 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
 
+    int populacao, turista, populacao2, turista2;
+    char estado[10], nome[20], codigo[5], estado2[10], nome2[20], codigo2[5];
+    float pib, area, pib2, area2, desidade, ppc, desidade2, ppc2;
+
+    printf("Para o desafio do Super Trufo insira as seguintes informações: \n");
     
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    
+    printf("Estado: ");
+    scanf("%s", &estado);
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    printf("Codigo: ");
+    scanf("%s", &codigo);
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    printf("Nome da cidade: ");
+    scanf("%s", &nome);
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    printf("População: ");
+    scanf("%d", &populacao);
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    printf("Área: ");
+    scanf("%f", &area);
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    printf("PIB: ");
+    scanf("%f", &pib);
 
-    return 0;
+    printf("Número de Turistas: ");
+    scanf("%d", &turista);
+
+    desidade = populacao / area;
+    ppc = pib / populacao;
+
+
+
+    printf("\nInsira as informações da segunda carta: \n");
+
+    printf("Estado: ");
+    scanf("%s", &estado2);
+
+    printf("Codigo: ");
+    scanf("%s", &codigo2);
+
+    printf("Nome da cidade: ");
+    scanf("%s", &nome2);
+
+    printf("População: ");
+    scanf("%d", &populacao2);
+
+    printf("Área: ");
+    scanf("%f", &area2);
+
+    printf("PIB: ");
+    scanf("%f", &pib2);
+
+    printf("Número de Turistas: ");
+    scanf("%d", &turista2);
+
+    desidade2 = populacao2 / area2;
+    ppc2 = pib2 / populacao2;
+    
+
+    printf("\nAs cartas são as seguinte:\n");
+    
+    printf("\n***Primeira Carta***\n");
+    printf("\nEstado: %s\nCodigo: %s\nNome da cidade: %s\nPopulação: %d\nÁrea: %.2f KM²\nPIB: %.2f bilhões de reais\nNumero de turistas: %d\ndesidade populacional: %.2f hab/km²\nPIB Per Capita: %.2f reais\n", estado, codigo,nome,populacao,area,pib,turista,desidade, ppc);
+    printf("\n***Segunda Carta***\n");
+    printf("\nEstado: %s\nCodigo: %s\nNome da cidade: %s\nPopulação: %d\nÁrea: %.2f KM²\nPIB: %.2f bilhões de reais\nNumero de turistas: %d\ndesidade populacional: %.2f hab/km²\nPIB Per Capita: %.2f reais\n", estado2, codigo2,nome2,populacao2,area2,pib2,turista2,desidade2,ppc2);
+
+
+    printf("\n***O resultado das compracoes***\n");
+
+    if (populacao>populacao2)
+    {
+        printf("\nCarta 1 venceu em populacao\n");
+    } else{
+        printf("\nCarta 2 venceu em populacao\n");
+    }
+
+    if (area>area2)
+    {
+        printf("Carta 1 venceu em area\n");
+    } else{
+        printf("Carta 2 venceu em area\n");
+    }
+
+    if (pib>pib2)
+    {
+        printf("Carta 1 venceu em PIB\n");
+    } else{
+        printf("Carta 2 venceu em PIB\n");
+    }
+
+    if (ppc>ppc2)
+    {
+        printf("Carta 1 venceu em PIB Per Capita\n");
+    } else{
+        printf("Carta 2 venceu em PIB Per Capita\n");
+    }
+
+    if (desidade<desidade2)
+    {
+        printf("Carta 1 venceu em Densidade populacional\n");
+    } else{
+        printf("Carta 2 venceu em Densidade populacional\n");
+    }
+
+    if (turista>turista2)
+    {
+        printf("Carta 1 venceu em Turistas\n");
+    } else{
+        printf("Carta 2 venceu em Turistas\n");
+    }
+    
+return 0;
+}
 }
